@@ -54,20 +54,34 @@ void fundamentals (void) {
     size_t position;
     do {
         printf ("Type not empty string (q - to quit): \n");
+
+        //read input from the user
         fgets (buffer1, BUFFER_SIZE, stdin) ;
+
+        // ensures that the input has a null terminator
         buffer1 [strlen (buffer1) - 1] = '\0';
-        if (strcmp (buffer1, "q") != 0) {
+
+        //check if user has not pressed "q"
+        if (strcmp (buffer1, "q") != 0) {            
             printf ("Type the character position within the string: \n"); 
-            fgets (numInput, NUM_INPUT_SIZE, stdin) ;
+
+            //read numeric imput
+            fgets (numInput, NUM_INPUT_SIZE, stdin);
+            // ensure that the input has a null terminator
             numInput [strlen (numInput) - 1] = '\0';
+            //convert input to an integer
             position = atoi (numInput) ;
+            //check if user input was bigger than the string
+            //and if it is set the input to the max position available
             if (position >= strlen (buffer1)) {
                 position = strlen (buffer1) - 1;
                 printf("Too big... Position reduced to max. availbale\n");
             }
+            // shows what character is available at the inputed position
             printf ("The character found at %d position is \'%c\'\n",
                         (int) position, buffer1 [position]);
         }
+    //repeats the loop if user has not pressed "q"
     } while (strcmp (buffer1,"q") != 0);
     printf ("*** End of Indexing Strings Demo ***\n\n");
 }
