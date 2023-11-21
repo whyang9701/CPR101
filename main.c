@@ -10,23 +10,44 @@
 
 
 int main(void){
-    printf("start testing fundamentals function\n");
-    // print the character at the position
-    fundamentals();
+    char input;
+    do{
+        printf("Select the function to test:\n");
+        printf("1. fundamentals\n");
+        printf("2. manipulating\n");
+        printf("3. tokenizing\n");
+        printf("4. converting\n");
+        printf("q. quit\n");
+        scanf("%c%*c", &input);
+        if(input == '1'){
+            printf("start testing fundamentals function\n");
+            // print the character at the position
+            fundamentals();
+        }
+        else if(input == '2'){
+            printf("start testing manipulating function\n");
+            // concatenate two strings
+            manipulating();
+        }
+        else if(input == '3'){
+            printf("start testing tokenizing function\n");
+            // seperate the string by space
+            tokenizing();
+        }
+        else if(input == '4'){
+            printf("start testing converting function\n");
+            // conver user input string to int
+            converting();
+        }
+        else if(input == 'q'){
+            printf("Goodbye!\n");
+            return 0;       
+        }
+        else{
+            printf("Invalid input\n");
+        }
 
-    printf("start testing manipulating function\n");
-    // concatenate two strings
-    manipulating();
-
-    printf("start testing tokenizing function\n");
-    // seperate the string by space
-    tokenizing();
-
-
-    printf("start testing converting function\n");
-    // conver user input string to int
-    converting();
-    return 0;
+    }while(input != 'q');
 }
 
 //V1
