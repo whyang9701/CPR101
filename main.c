@@ -96,7 +96,7 @@ void fundamentals (void) {
             //and if it is set the input to the max position available
             if (position >= strlen (buffer1)) {
                 position = strlen (buffer1) - 1;
-                printf("Too big... Position reduced to max. availbale\n");
+                printf("Too big... Position reduced to max. available\n");
             }
             // shows what character is available at the inputed position
             printf ("The character found at %d position is \'%c\'\n",
