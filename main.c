@@ -108,44 +108,87 @@ void fundamentals (void) {
 }
 
 // V1
-void manipulating (void) {
+// Function to demonstrate string concatenation
+void manipulating(void) {
+    // Print the start message of the demo
     printf("*** Start of Concatenating Strings Demo ***\n");
-    char string1 [BUFFER_SIZE * 2];
-    char string2 [BUFFER_SIZE];
+
+    // Declare two character arrays to store strings
+    char string1[BUFFER_SIZE * 2];
+    char string2[BUFFER_SIZE];
+
+    // Loop until the user enters "q"
     do {
-        printf ("Type the 1st string (q - to quit): \n"); 
-        fgets (string1, BUFFER_SIZE, stdin) ; 
-        string1 [strlen(string1) - 1] = '\0';
-        if ((strcmp (string1, "q") != 0)) {
-            printf ("Type the 2nd string: \n");
-            fgets (string2, BUFFER_SIZE, stdin);
-            string2 [strlen(string2) - 1] = '\0';
-            strcat (string1, string2);
-            printf ("Concatenated string is \'%s\'\n", string1) ;
+        // Prompt the user to input the first string
+        printf("Type the 1st string (q - to quit): \n");
+        // Read the input string from the user
+        fgets(string1, BUFFER_SIZE, stdin);
+        // Remove the newline character at the end of the input
+        string1[strlen(string1) - 1] = '\0';
+
+        // Check if the input is not "q"
+        if (strcmp(string1, "q") != 0) {
+            // Prompt the user to input the second string
+            printf("Type the 2nd string: \n");
+            // Read the input string from the user
+            fgets(string2, BUFFER_SIZE, stdin);
+            // Remove the newline character at the end of the input
+            string2[strlen(string2) - 1] = '\0';
+
+            // Concatenate the second string to the first string
+            strcat(string1, string2);
+
+            // Print the concatenated string
+            printf("Concatenated string is '%s'\n", string1);
         }
-    } while (strcmp (string1, "q") != 0);
-    printf ("*** End of Concatenating Strings Demo ***\n\n") ;
+    } while (strcmp(string1, "q") != 0);
+
+    // Print the end message of the demo
+    printf("*** End of Concatenating Strings Demo ***\n\n");
 }
 
+
+
 // V1
-void tokenizing (void) {
-printf ("*** Start of Tokenizing Words Demo ***\n");
-    char words [BUFFER_SIZE];
+// Function to demonstrate tokenizing words
+void tokenizing(void) {
+    printf("*** Start of Tokenizing Words Demo ***\n");
+
+    // Declare a character array to store words
+    char words[BUFFER_SIZE];
+    // Pointer to the next word in the input
     char* nextWord = NULL;
+    // Counter to keep track of the number of words
     int wordsCounter;
+
+    // Loop until the user enters "q"
     do {
-        printf ("Type a few words separated by space (q - to quit): \n"); 
-        fgets (words, BUFFER_SIZE, stdin) ;
-        words [strlen (words) - 1] = '\0';
-        if (strcmp (words, "q") != 0) {
-            nextWord = strtok (words, " ");
+        // Prompt the user to input a few words separated by space
+        printf("Type a few words separated by space (q - to quit): \n");
+        // Read the input string from the user
+        fgets(words, BUFFER_SIZE, stdin);
+        // Remove the newline character at the end of the input
+        words[strlen(words) - 1] = '\0';
+
+        // Check if the input is not "q"
+        if (strcmp(words, "q") != 0) {
+            // Tokenize the input string using space as the delimiter
+            nextWord = strtok(words, " ");
+            // Reset the word counter
             wordsCounter = 1;
+
+            // Loop through each tokenized word
             while (nextWord) {
-                printf ("Word #%d is \'%s\'\n", wordsCounter++, nextWord) ;
-                nextWord = strtok (NULL, " ");
+                // Print the current word and its number
+                printf("Word #%d is '%s'\n", wordsCounter++, nextWord);
+                // Get the next tokenized word
+                nextWord = strtok(NULL, " ");
             }
         }
-    } while (strcmp (words, "q") != 0) ;
-    printf ("*** End of Tokenizing Words Demo ***\n\n");
+    } while (strcmp(words, "q") != 0);
+
+    // Print the end message of the demo
+    printf("*** End of Tokenizing Words Demo ***\n\n");
 }
+
 
