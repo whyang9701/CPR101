@@ -52,18 +52,40 @@ int main(void){
 
 //V1
 void converting (void) {
+
+    // Print a heading indicating the start of the demo
     printf ("*** Start of Converting Strings to int Demo ***\n");
+
+    // Declare a character array to store the user input
     char intstring [BUFFER_SIZE];
+
+    // Declare an integer variable to store the converted number
     int intNumber;
+
+    // Loop until the user enters 'q'
     do {
-        printf ("Type an int numeric string (q - to quit) : \n"); 
+        
+        // Print a prompt asking the user to enter a numeric string
+        printf ("Type an int numeric string (q - to quit) : \n");
+        
+        // Read a line of input from the user 
         fgets (intstring, BUFFER_SIZE, stdin);
+        
+        // Remove the newline character from the end of the input string
         intstring [strlen (intstring) - 1] = '\0';
+        
+        // Check if the input string is not 'q'
         if (strcmp (intstring, "q" ) != 0) {
+            
+            // Convert the input string to an integer using atoi()
             intNumber = atoi (intstring) ;
+            
+            // Print the converted number
             printf ("Converted number is %d\n", intNumber) ;
         }
     }while (strcmp (intstring, "q") != 0);
+    
+    // Print a heading indicating the end of the demo
     printf ("*** End of Converting Strings to int Demo ***\n\n");
 }
 
