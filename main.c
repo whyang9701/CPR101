@@ -130,42 +130,45 @@ void fundamentals (void) {
 }
 
 // V1
-// Function to demonstrate string concatenation
-void manipulating(void) {
-    // Print the start message of the demo
+// Start of version 1 of the manipulating function
+void manipulating(void)
+{
+    // Print a message to indicate the start of the concatenating strings demo
     printf("*** Start of Concatenating Strings Demo ***\n");
-
-    // Declare two character arrays to store strings
+    // Declare a string array that can hold twice the BUFFER_SIZE to store the concatenated string
     char string1[BUFFER_SIZE * 2];
+    // Declare a second string array of BUFFER_SIZE for the second input string
     char string2[BUFFER_SIZE];
 
-    // Loop until the user enters "q"
-    do {
-        // Prompt the user to input the first string
-        printf("Type the 1st string (q - to quit): \n");
-        // Read the input string from the user
+    // A do-while loop to keep the program running until 'q' is entered
+    do
+    {
+        // Prompt the user to type the first string with 'q' as the quit command
+        printf("Type the 1st string (q - to quit):\n");
+        // Read the input from the user into string1 up to BUFFER_SIZE characters
         fgets(string1, BUFFER_SIZE, stdin);
-        // Remove the newline character at the end of the input
+        // Replace the newline character at the end of the input with a null terminator
         string1[strlen(string1) - 1] = '\0';
+        // Check if the input string is not 'q' to continue
 
-        // Check if the input is not "q"
-        if (strcmp(string1, "q") != 0) {
-            // Prompt the user to input the second string
-            printf("Type the 2nd string: \n");
-            // Read the input string from the user
+        if ((strcmp(string1, "q") != 0))
+        {
+            // Prompt the user to type the second string
+            printf("Type the 2nd string:\n");
+            // Read the second string input into string2
             fgets(string2, BUFFER_SIZE, stdin);
-            // Remove the newline character at the end of the input
+            // Replace the newline character at the end of string2 with a null terminator
             string2[strlen(string2) - 1] = '\0';
-
-            // Concatenate the second string to the first string
+            // Concatenate string2 to the end of string1
             strcat(string1, string2);
-
             // Print the concatenated string
-            printf("Concatenated string is '%s'\n", string1);
+            printf("Concatenated string is \\%s\\\n", string1);
         }
+
+        // Continue the loop until 'q' is entered as the first string
     } while (strcmp(string1, "q") != 0);
 
-    // Print the end message of the demo
+    // Print a message to indicate the end of the concatenating strings demo
     printf("*** End of Concatenating Strings Demo ***\n\n");
 }
 
