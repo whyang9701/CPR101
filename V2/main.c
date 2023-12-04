@@ -1,3 +1,6 @@
+
+
+#define _CRT_SECURE_NO_WARNINGS
 #define BUFFER_SIZE 80 
 #define NUM_INPUT_SIZE 10
 #include <stdio.h>
@@ -21,7 +24,7 @@ int main(void){
         scanf("%c%*c", &input);
         if(input == '1'){
             printf("start testing fundamentals function\n");
-            // print the character at the position
+            // calculate and display the lenght of a string
             fundamentals();
         }
         else if(input == '2'){
@@ -68,18 +71,32 @@ void converting (void) {
 }
 
 // V2
-void fundamentals (void) {
+void fundamentals (void) 
+{
+
     printf ("*** Start of Measuring Strings Demo ***\n");
     char buffer2 [BUFFER_SIZE];
-    do {
+
+    do 
+    {
         printf("Type a string (q - to quit):\n");
-        fgets (buffer2, BUFFER_SIZE, stdin) ;
+
+        //Get string input from the user
+        fgets (buffer2, BUFFER_SIZE, stdin);
+
+        //replace newline character with a null terminator
         buffer2[strlen(buffer2) - 1] = '\0';
-        if (strcmp (buffer2, "q") != 0)
-            printf ("The length of \'%s\' is %d characters\n", 
-                    buffer2, (int)strlen(buffer2));
-    }while (strcmp(buffer2,"q") != 0) ;
-    printf ("*** End of Measuring Strinas Demo ***\n\n");
+
+        // print the lenght of the string, if the user didn't press 'q'
+        if (strcmp(buffer2, "q") != 0)
+        {
+            printf("The length of \'%s\' is %d characters\n",
+                buffer2, (int)strlen(buffer2));
+        }
+
+    }while (strcmp(buffer2,"q") != 0);
+
+    printf ("*** End of Measuring Strings Demo ***\n\n");
 }
 
 void manipulating(void){
