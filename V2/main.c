@@ -99,32 +99,52 @@ void fundamentals (void)
     printf ("*** End of Measuring Strings Demo ***\n\n");
 }
 
-void manipulating(void){
-// V2
-    printf ("*** start of Comparing Strings Demo ***\n");
-    char compare1 [BUFFER_SIZE];
-    char compare2 [BUFFER_SIZE];
+void manipulating(void)
+{
+    // V2
+    // Print start message
+    printf("*** start of Comparing Strings Demo ***\n");
+
+    // Declare two character arrays to store strings for comparison
+    char compare1[BUFFER_SIZE];
+    char compare2[BUFFER_SIZE];
+    // store the compared results in a variable named result
     int result;
-    do{
-        printf ("Type the Ist string to compare (q - to quit) : \n");
-        fgets (compare1, BUFFER_SIZE, stdin);
+
+    // Loop to continue comparing strings until the user enters 'q'
+    do
+    {
+        printf("Type the Ist string to compare (q - to quit) : \n");
+
+        // Read the input string from the user
+        fgets(compare1, BUFFER_SIZE, stdin);
+
+        // Remove the newline character from the input string
         compare1[strlen(compare1) - 1] = '\0';
-        if (strcmp(compare1, "q") != 0) {
+
+        // Check if the entered string is not 'q'
+        if (strcmp(compare1, "q") != 0)
+        {
             printf("Type the 2nd string to compare: \n");
+
+            // Read the second input string from the user
             fgets(compare2, BUFFER_SIZE, stdin);
+
+            // Remove the newline character from the second input string
             compare2[strlen(compare2) - 1] = '\0';
-            result = strcmp (compare1, compare2);
+            // Compare the two strings and store the result
+            result = strcmp(compare1, compare2);
+            // Output the result of the string comparison
             if (result < 0)
                 printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
             else if (result == 0)
                 printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
-            else 
+            else
                 printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
         }
-    }while(strcmp(compare1, "q") != 0);
+    } while (strcmp(compare1, "q") != 0); // Continue the loop until the user enters 'q'
     printf("*** End of Comparing strings Demo ***\n\n");
 }
-
 
 void tokenizing(void) {
 // V3 
