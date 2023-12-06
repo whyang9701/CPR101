@@ -111,7 +111,7 @@ void fundamentals (void)
 void manipulating(void)
 {
 // V2
-    printf("*** start of Comparing Strings Demo ***\n");
+    printf("*** Start of Comparing Strings Demo ***\n");
 
     char compare1[BUFFER_SIZE];
     char compare2[BUFFER_SIZE];
@@ -120,7 +120,7 @@ void manipulating(void)
     do
     {
         // Prompt the user to enter the first string to compare
-        printf("Type the Ist string to compare (q - to quit):\n");
+        printf("Type the 1st string to compare (q - to quit):\n");
         fgets(compare1, BUFFER_SIZE, stdin); // Read the string from the user
         compare1[strlen(compare1) - 1] = '\0'; // Replace the newline char with a null terminator
 
