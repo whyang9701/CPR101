@@ -54,35 +54,44 @@ int main(void){
 }
 
 //V2
-void converting (void) {
+void converting (void)
+{
+    // Start of Converting Strings to double Demo
     printf ("*** Start of Converting Strings to double Demo ***\n");
-    char doubleString [BUFFER_SIZE];
-    double doubleNumber;
-    do{
-        printf ("Type the double numeric string (q - to quit): \n");
-        fgets (doubleString, BUFFER_SIZE, stdin) ;
-        doubleString [strlen(doubleString) - 1] = '\0';
-        if ((strcmp (doubleString, "q") != 0)) {
-            doubleNumber = atof (doubleString);
+    char doubleString[BUFFER_SIZE];
+    double doubleNumber; // Variable for the converted number
+
+    do
+    {
+        // Prompt the user to enter a double numeric string
+        printf("Type the double numeric string (q - to quit):\n");
+        fgets(doubleString, BUFFER_SIZE, stdin); // Read the string from the user
+        doubleString[strlen(doubleString) - 1] = '\0'; // Replace the newline char with a null terminator
+
+        // If the user didn't press 'q', convert the string to a double number
+        if ((strcmp (doubleString, "q") != 0))
+        {
+            // Convert the string to a double number using atof
+            doubleNumber = atof(doubleString);
             printf ("Converted number is %f\n", doubleNumber);
         }
-     } while (strcmp(doubleString,"q") != 0);
+     } while (strcmp(doubleString, "q") != 0); // If the user pressed 'q', exit the loop
+
     printf ("*** End of Converting Strings to double Demo ***\n\n");
 }
 
 // V2
 void fundamentals (void) 
 {
-
-    printf ("*** Start of Measuring Strings Demo ***\n");
-    char buffer2 [BUFFER_SIZE];
+    printf("*** Start of Measuring Strings Demo ***\n");
+    char buffer2[BUFFER_SIZE];
 
     do 
     {
         printf("Type a string (q - to quit):\n");
 
         //Get string input from the user
-        fgets (buffer2, BUFFER_SIZE, stdin);
+        fgets(buffer2, BUFFER_SIZE, stdin);
 
         //replace newline character with a null terminator
         buffer2[strlen(buffer2) - 1] = '\0';
@@ -94,9 +103,9 @@ void fundamentals (void)
                 buffer2, (int)strlen(buffer2));
         }
 
-    }while (strcmp(buffer2,"q") != 0);
+    }while (strcmp(buffer2, "q") != 0);
 
-    printf ("*** End of Measuring Strings Demo ***\n\n");
+    printf("*** End of Measuring Strings Demo ***\n\n");
 }
 
 void manipulating(void)
@@ -136,36 +145,55 @@ void manipulating(void)
             result = strcmp(compare1, compare2);
             // Output the result of the string comparison
             if (result < 0)
+            {
                 printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
+            }   
             else if (result == 0)
+            {
                 printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
+            }
             else
+            {
                 printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
+            }
         }
     } while (strcmp(compare1, "q") != 0); // Continue the loop until the user enters 'q'
     printf("*** End of Comparing strings Demo ***\n\n");
 }
 
-void tokenizing(void) {
-// V3 
-    printf ("*** start of Tokenizing Sentences Demo ***\n");
-    char sentences [BUFFER_SIZE];
-    char* nextSentence = NULL;
-    int sentencesCounter;
-    do {
-        printf ("Type a few sentences separated by dot (q - to quit): \n");
-        fgets (sentences, BUFFER_SIZE, stdin);
-        sentences [strlen(sentences) - 1] = '\0';
-        if ((strcmp(sentences,"q") != 0)){
-            nextSentence = strtok (sentences, ".");
-            sentencesCounter = 1;
-            while (nextSentence) {
-                printf ("Senetnce #%d is \'%s\'\n", sentencesCounter++, nextSentence) ;
-                nextSentence = strtok (NULL, ".");
+
+void tokenizing(void)
+{
+// V2
+    // Start of Tokenizing Phrases Demo
+    printf("*** Start of Tokenizing Phrases Demo ***\n");
+    char phrases[BUFFER_SIZE];
+    char* nextPhrase = NULL; // Pointer to the next phrase
+    int phrasesCounter; // Counter for the number of phrases
+    do
+    {
+        // Prompt the user to enter a few phrases separated by comma
+        printf("Type a few phrases separated by comma(q - to quit):\n");
+        fgets(phrases, BUFFER_SIZE, stdin); // Read the string from the user
+        phrases[strlen(phrases) - 1] = '\0'; // Replace the newline char with a null terminator
+
+        // If the user didn't press 'q', tokenize the string
+        if ((strcmp(phrases, "q") != 0))
+        {
+            // Tokenize the string using strtok
+            nextPhrase = strtok(phrases, ",");
+            phrasesCounter = 1; // Initialize the phrases counter
+            // Loop to print the phrases
+            while (nextPhrase)
+            {
+                // Print the phrase with the phrase number
+                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+                // Tokenize the next phrase
+                nextPhrase = strtok (NULL, ",");
             }
         }
-    } while (strcmp(sentences, "q") != 0);
-    printf ("*** End of Tokenizing Sentences Demo ***\n\n");
+    } while (strcmp(phrases, "q") != 0); // If the user pressed 'q', exit the loop
+    printf ("*** End of Tokenizing Phrases Demo ***\n\n");
 }
 
 
