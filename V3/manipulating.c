@@ -1,6 +1,7 @@
-#define BUFFER_SIZE 80 
-#include <stdio.h>
-#include <string.h>
+// #define BUFFER_SIZE 80 
+// #include <stdio.h>
+// #include <string.h>
+#include "manipulating.h"
 void manipulating(void)
 {
 //V3

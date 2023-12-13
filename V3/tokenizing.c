@@ -1,7 +1,4 @@
-#define BUFFER_SIZE 80 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "tokenizing.h"
 void tokenizing(void)
 {
 //V3

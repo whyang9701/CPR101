@@ -1,7 +1,4 @@
-#define BUFFER_SIZE 80 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "converting.h"
 void converting (void) 
 {
 //V3

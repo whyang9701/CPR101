@@ -1,6 +1,4 @@
-#define BUFFER_SIZE 80 
-#include <stdio.h>
-#include <string.h>
+#include "fundamentals.h"
 void fundamentals (void) 
 {
 //V3
